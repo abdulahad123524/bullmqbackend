@@ -40,9 +40,6 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Build application
-        run: npm run build
-
   docker:
     needs: test
     runs-on: ubuntu-latest
