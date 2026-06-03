@@ -9,7 +9,8 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3000
-      - MONGO_URI=mongodb://mongo:27017/mydatabase
+      # - MONGO_URI=mongodb://mongo:27017/mydatabase
+      - MONGO_URI="mongodb+srv://abdulahad_db_user:WOKLZtBRUctnUvNX@bullmq-cluster.htrcxpx.mongodb.net/mydb?retryWrites=true&w=majority"
       - REDIS_HOST=redis
       - REDIS_PORT=6379
     depends_on:
@@ -23,3 +24,15 @@ services:
     image: mongo:latest
     ports:
       - 27017:27017
+    networks:
+      - backend-network
+  redis:
+    image: redis:7
+    ports:
+      - 6379:6379
+    networks:
+      - backend-network
+
+networks:
+  backend-network:
+    driver: bridge

@@ -27,7 +27,8 @@ jobs:
     env:
       REDIS_HOST: localhost
       REDIS_PORT: 6379
-      MONGO_URI: mongodb://localhost:27017/mydatabase
+      # MONGO_URI: mongodb://localhost:27017/mydatabase
+      MONGO_URI: "mongodb+srv://abdulahad_db_user:WOKLZtBRUctnUvNX@bullmq-cluster.htrcxpx.mongodb.net/mydb?retryWrites=true&w=majority"
 
     steps:
       - name: Checkout code

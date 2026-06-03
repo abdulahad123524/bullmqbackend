@@ -5,11 +5,14 @@ const {
   updateProduct,
   deleteProduct,
   getAllProducts,
+  bulkCreateProducts,
+  bulkDeleteProducts,
 } = require("../controller/product.controller");
 
+router.get("/", getAllProducts);
+router.post("/bulk", bulkCreateProducts);
+router.delete("/bulk", bulkDeleteProducts);
 router.post("/", createProduct);
 router.put("/:id", updateProduct);
 router.delete("/:id", deleteProduct);
-router.get("/", getAllProducts);
-
 module.exports = router;

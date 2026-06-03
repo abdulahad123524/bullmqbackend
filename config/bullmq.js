@@ -1,9 +1,7 @@
-const { Redis } = require("ioredis");
-
-const redis = new Redis({
+const connection = {
   host: process.env.REDIS_HOST || "localhost",
   port: Number(process.env.REDIS_PORT) || 6379,
   maxRetriesPerRequest: null,
-});
+};
 
-module.exports = redis;
+module.exports = { connection };
