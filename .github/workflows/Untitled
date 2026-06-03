@@ -1,3 +1,0 @@
-git add .
-git commit -m "fix github actions workflow path"
-git push origin main
